@@ -1,0 +1,68 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+<div class="container mt-3">
+    <h1 align="center">Receta Nueva</h1>
+    <p  class="border border-danger" align="center">Si la receta no contiene alguno de los items podes dejarlo vacio. En descripcion anotar los pasos y tiempo de coccion de ser necesario.</p>
+    <br><br>
+    <form [formGroup]="formularioRecetas">
+      <div class="row mb-3">
+        <label for="nom_receta" class="col-sm-2 col-form-label"><strong> Nombre de la receta </strong></label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="nom_receta" formControlName="nombre_receta">
+        </div>
+      </div>
+        <div class="row mb-3">
+          <label for="huevos" class="col-sm-2 col-form-label"><strong> Huevos </strong></label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="huevos" formControlName="huevo">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="harina" class="col-sm-2 col-form-label"><strong> Harina </strong></label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="harina" formControlName="harina">
+          </div>
+        </div>
+        <div class="row mb-3">
+            <label for="azucar" class="col-sm-2 col-form-label"><strong> Azucar </strong></label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="azucar" formControlName="azucar">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="aceite" class="col-sm-2 col-form-label"><strong> Aceite </strong></label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="aceite" formControlName="aceite">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="agua" class="col-sm-2 col-form-label"><strong> Agua </strong></label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="agua" formControlName="agua">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="sal" class="col-sm-2 col-form-label"><strong> Sal </strong></label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="sal" formControlName="sal">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="manteca" class="col-sm-2 col-form-label"><strong> Manteca </strong></label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="manteca" formControlName="manteca">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="descripcion" class="col-sm-2 col-form-label"><strong> Descripcion de la coccion </strong></label>
+				<textarea cols="50" rows="5" id="idescripcion" name="descripcion" class="form-control" maxlength="255" formControlName="descripcion"></textarea>	
+		</div>
+       
+        <button class="btn btn-success" (click)="agregar()" *ngIf="!esEditable" [disabled]="formularioRecetas.invalid">Agregar Receta</button>
+        <button class="btn btn-primary" (click)="editar()" *ngIf="esEditable" >Editar Receta</button>
+      </form>
+</div>
+

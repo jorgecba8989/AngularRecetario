@@ -1,0 +1,30 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&family=Viaoda+Libre&display=swap" rel="stylesheet">
+
+<div class="container mt-5">
+    <h4>Listado de Recetas</h4>
+    <form action="">
+        <div class="form-group" *ngIf="!nombre_receta">
+            <input type="text" name="buscador" id="buscador" placeholder="Ingresa el nombre de la receta..." class="form-control" (input)="buscarReceta($any($event.target).value)">
+        </div>
+    </form>
+    <br> <br>
+
+    <div *ngFor="let item of recetas" >
+        <div class="card" *ngIf="item.visible">
+            <div class="card-header">
+                <p > {{item.nombre_receta}} </p>
+            </div>
+            <div class="card-body">
+              <a [routerLink]="['/ver/',item.id]" class="btn btn-primary">Ver</a>&nbsp;&nbsp;
+              <a [routerLink]="['/agregar/',item.id]" class="btn btn-warning">Editar</a>&nbsp;&nbsp;
+              <a class="btn btn-danger"  (click)="eliminar(item)">Eliminar</a>&nbsp;&nbsp;
+            </div>
+          </div>
+          <br><br>
+    </div>
+   
+
+      
+</div>
+
