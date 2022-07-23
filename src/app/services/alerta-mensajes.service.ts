@@ -4,12 +4,9 @@ import Swal from 'sweetalert2'
 @Injectable({
   providedIn: 'root'
 })
-export class MensajesService {
+export class AlertaMensajesService {
 
   constructor() { }
-
-
-
 
   mensajeCorrecto(titulo: string, mensaje: string)
   {
@@ -19,6 +16,4 @@ export class MensajesService {
       icon: "success"
     })
   }
-
-
 }

@@ -5,13 +5,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyB6pTjgzzoMk0L0N4ldrjg2LJT7SHb5vag",
-    authDomain: "recetasmimama.firebaseapp.com",
-    projectId: "recetasmimama",
-    storageBucket: "recetasmimama.appspot.com",
-    messagingSenderId: "905628940868",
-    appId: "1:905628940868:web:2012ea3f010d2f8c801a11",
-    measurementId: "G-T9KVBN3095"
+    apiKey: "AIzaSyCTPd82LxyDF2GsDwicq5IN52goYwWFRC0",
+    authDomain: "proyecto-lab-3.firebaseapp.com",
+    databaseURL: "https://proyecto-lab-3-default-rtdb.firebaseio.com",
+    projectId: "proyecto-lab-3",
+    storageBucket: "proyecto-lab-3.appspot.com",
+    messagingSenderId: "859159982354",
+    appId: "1:859159982354:web:ab72109e6862c057db83cb",
+    measurementId: "G-20K3ZZXJZ9"
   }
 };
 

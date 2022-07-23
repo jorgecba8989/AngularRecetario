@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AgregarRecetaComponent } from './agregar-receta/agregar-receta.component';
-import { BuscarRecetaComponent } from './buscar-receta/buscar-receta.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,18 +13,21 @@ import { environment } from 'src/environments/environment';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DetallesRecetaComponent } from './detalles-receta/detalles-receta.component';
-import { SaludoComponent } from './saludo/saludo.component';
-
+import { ComicsComponent } from './comics/comics.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ComicDescripcionComponent } from './comic-descripcion/comic-descripcion.component';
+import { SeriesComponent } from './series/series.component';
+import { MisFavoritosComponent } from './mis-favoritos/mis-favoritos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AgregarRecetaComponent,
-    BuscarRecetaComponent,
     CabeceraComponent,
-    DetallesRecetaComponent,
-    SaludoComponent
+    ComicsComponent,
+    ComicDescripcionComponent,
+    SeriesComponent,
+    MisFavoritosComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,8 @@ import { SaludoComponent } from './saludo/saludo.component';
     ReactiveFormsModule,
     FormsModule,
     AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    HttpClientModule
   ],
   providers: [
     AngularFirestore

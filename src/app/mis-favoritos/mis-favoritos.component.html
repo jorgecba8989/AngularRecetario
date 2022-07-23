@@ -1,0 +1,19 @@
+<body>
+    <div class="container mt-3">
+        <div class="col-12">
+            <div class="row">
+                <form action="">
+                    <input type="text" name="buscador" id="buscador" placeholder="Ingresa el nombre de la receta..." class="form-control"  (keyup)="buscar($event)">
+ <button class="btn btn-outline-light" type="button" (click)="buscar($event)">Buscar</button>
+                <!-- <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Ingrese su busqueda..." aria-label="Busqueda" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-light" type="button" (click)="buscar($any($event.target).value)">Buscar</button>
+                    </div>
+                </div> -->
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
