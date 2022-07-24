@@ -11,8 +11,9 @@ const routes: Routes = [
   {path:'favoritos',component:MisFavoritosComponent},
   {path:'comics',component:ComicsComponent},
   {path:'series',component:SeriesComponent},
-  {path: 'ver/:id', component:ComicDescripcionComponent}
- 
+  {path: 'ver/:id', component:ComicDescripcionComponent},
+  {path: 'ver/:favorito/:id', component:ComicDescripcionComponent}
+
 ];
 
 @NgModule({
