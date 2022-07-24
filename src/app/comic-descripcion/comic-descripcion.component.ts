@@ -16,8 +16,9 @@ export class ComicDescripcionComponent implements OnInit {
   comicSeleccionado: any=[]
   _creadores: any[] = new Array<any>();
   _nombreLibro : string = ''
-  _libro: any = []
-  formulario!: FormGroup
+  // _libro: any = []
+  formulario!: FormGroup;
+  _esFavorito : string = ''
 
   constructor( private activeRoute: ActivatedRoute,
     private service:ApiMarvelService, 
@@ -30,6 +31,8 @@ export class ComicDescripcionComponent implements OnInit {
     this.initForm()
 
     this.id = this.activeRoute.snapshot.params.id;
+    this._esFavorito = this.activeRoute.snapshot.params.favorito;
+
 
     this.service.comicSeleccionado(this.id).subscribe((result)=>{
       this.comicSeleccionado = result.data.results;
@@ -45,6 +48,7 @@ export class ComicDescripcionComponent implements OnInit {
       this.formulario.setValue({
         titulo: this.comicSeleccionado[0].title,
         descripcion: this.comicSeleccionado[0].description,
+        idComic: this.comicSeleccionado[0].id
       })
 
     })
@@ -53,7 +57,6 @@ export class ComicDescripcionComponent implements OnInit {
   guardar(){
     this.db.collection('comics').add(this.formulario.value).then((termino)=>{
       this.msj.mensajeCorrecto("Listo", "Lo agregaste a favoritos")
-      console.log(this._nombreLibro)
     })
 
   }
@@ -62,14 +65,18 @@ export class ComicDescripcionComponent implements OnInit {
     this.formulario = this.fb.group({
       titulo: [''],
       descripcion: [''],
-      // autores: [''],
+      idComic: [''],
      
 
     })
   }
 
   regresar(){
-    document.location.href = './comics';
+    if(this._esFavorito) document.location.href = './favoritos';
+    else{
+      document.location.href = './comics';
+    }
+    
   }
 
 }

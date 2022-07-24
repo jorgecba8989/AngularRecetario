@@ -2,7 +2,7 @@
   <form [formGroup]="formulario">
     <input type="text" class="form-control" id="titulo" formControlName="titulo" [hidden]="true">
     <input type="text" class="form-control" id="descripcion" formControlName="descripcion" [hidden]="true">
-    <!-- <input type="text" class="form-control" id="autores" formControlName="autores" [hidden]="true"> -->
+    <input type="text" class="form-control" id="idComic" formControlName="idComic" [hidden]="true">
 
   </form>
     <div class="container">
@@ -26,7 +26,7 @@
             <div align="end">
                 <button type="button" class="btn btn-primary" (click)="regresar()">Volver</button>
                 &nbsp;
-                <button type="button" class="btn btn-success" (click)="guardar()">Guardar</button>
+                <button type="button" class="btn btn-success" (click)="guardar()" *ngIf="!_esFavorito">Guardar</button>
             </div>
           </div>
         </div>
